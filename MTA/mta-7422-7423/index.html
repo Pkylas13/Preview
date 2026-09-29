@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Configuring and managing the Migration Toolkit for Applications user interface</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.2"/><meta name="description" content="By using the migration toolkit for applications (MTA) user interface, you can inventory, assess, analyze, and manage applications for faster migration to OpenShift through the user interface at both the portfolio and application levels."/><link rel="next" href="#intro-to-mta-ui_user-interface-guide" title="Chapter 1. Introduction to the migration toolkit for applications user interface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46053891815056"><div class="titlepage"><div><div class="producttitle"><span class="productname">migration toolkit for applications</span> <span class="productnumber">8.2</span></div><div><h1 class="title">Configuring and managing the Migration Toolkit for Applications user interface</h1></div><div><h2 class="subtitle">Assessing and analyzing applications with the migration toolkit for applications user interface</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat Customer Content Services</span></div></div><div><a href="#idm46053841717936">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Configuring and managing the Migration Toolkit for Applications user interface</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.2"/><meta name="description" content="By using the migration toolkit for applications (MTA) user interface, you can inventory, assess, analyze, and manage applications for faster migration to OpenShift through the user interface at both the portfolio and application levels."/><link rel="next" href="#intro-to-mta-ui_user-interface-guide" title="Chapter 1. Introduction to the migration toolkit for applications user interface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm44959720822912"><div class="titlepage"><div><div class="producttitle"><span class="productname">migration toolkit for applications</span> <span class="productnumber">8.2</span></div><div><h1 class="title">Configuring and managing the Migration Toolkit for Applications user interface</h1></div><div><h2 class="subtitle">Assessing and analyzing applications with the migration toolkit for applications user interface</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat Customer Content Services</span></div></div><div><a href="#idm44959716759760">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				By using the migration toolkit for applications (MTA) user interface, you can inventory, assess, analyze, and manage applications for faster migration to OpenShift through the user interface at both the portfolio and application levels.
 			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="chapter"><a href="#intro-to-mta-ui_user-interface-guide">1. Introduction to the migration toolkit for applications user interface</a></span></li><li><span class="chapter"><a href="#configuring-mta-instance-environment_user-interface-guide">2. Configuring the migration toolkit for applications instance environment</a></span><ul><li><span class="section"><a href="#prerequisites">2.1. Prerequisites</a></span></li><li><span class="section"><a href="#configuring-credentials_configuring-mta-instance-environment">2.2. Configuring credentials</a></span><ul><li><span class="section"><a href="#configuring-source-control-credentials_configuring-credentials">2.2.1. Configuring source control credentials</a></span></li><li><span class="section"><a href="#configuring-maven-credentials_configuring-credentials">2.2.2. Configuring Maven credentials</a></span></li><li><span class="section"><a href="#mta-web-config-proxy-credentials_configuring-credentials">2.2.3. Configuring proxy credentials</a></span></li></ul></li><li><span class="section"><a href="#configuring-repositories_configuring-mta-instance-environment">2.3. Configuring repositories</a></span><ul><li><span class="section"><a href="#configuring-git-repos_configuring-repositories">2.3.1. Enable insecure access to Git repositories</a></span></li><li><span class="section"><a href="#configuring-subversion-repos_configuring-repositories">2.3.2. Enable insecure access to Subversion repositories</a></span></li><li><span class="section"><a href="#configuring-maven-repo_configuring-repositories">2.3.3. Enable insecure access to a Maven repository</a></span></li></ul></li><li><span class="section"><a href="#configuring-proxy-settings_configuring-mta-instance-environment">2.4. Configuring proxy settings</a></span></li><li><span class="section"><a href="#creating-custom-migration-targets_configuring-mta-instance-environment">2.5. Creating custom migration targets</a></span></li></ul></li><li><span class="chapter"><a href="#configuring-mta-instance_user-interface-guide">3. Configuring a migration toolkit for applications instance</a></span><ul><li><span class="section"><a href="#creating-a-stakeholder_configuring-mta-instance">3.1. Creating a stakeholder</a></span></li><li><span class="section"><a href="#creating-a-business-service_configuring-mta-instance">3.2. Creating a business service</a></span></li><li><span class="section"><a href="#creating-a-tag_configuring-mta-instance">3.3. Creating a tag</a></span></li></ul></li><li><span class="chapter"><a href="#creating-and-configuring-a-jira-connection_user-interface-guide">4. Creating and configuring a Jira connection</a></span><ul><li><span class="section"><a href="#configuring-jira-credentials_creating-and-configuring-a-jira-connection">4.1. Configuring Jira credentials</a></span></li><li><span class="section"><a href="#creating-a-jira-connection_creating-and-configuring-a-jira-connection">4.2. Creating a Jira connection</a></span></li></ul></li><li><span class="chapter"><a href="#managing-applications_user-interface-guide">5. Managing applications with MTA</a></span><ul><li><span class="section"><a href="#adding-applications_managing-applications">5.1. Adding a new application to the MTA UI</a></span></li><li><span class="section"><a href="#displaying-automated-tasks_managing-applications">5.2. Displaying automated tasks</a></span></li><li><span class="section"><a href="#importing-an-app-list_managing-applications">5.3. Importing a list of applications</a></span></li><li><span class="section"><a href="#mta-web-assigning-application-credentials_managing-applications">5.4. Assigning credentials to an application</a></span></li><li><span class="section"><a href="#setting-default-credentials_managing-applications">5.5. Setting default credentials</a></span></li><li><span class="section"><a href="#creating-migration-waves_managing-applications">5.6. Creating a migration wave</a></span></li><li><span class="section"><a href="#creating-jira-issues-for-migration-wave_managing-applications">5.7. Creating Jira issues for a migration wave</a></span></li></ul></li><li><span class="chapter"><a href="#assessing-applications_user-interface-guide">6. Assessing applications with MTA</a></span><ul><li><span class="section"><a href="#assessment-module-features_assessing-applications">6.1. The Assessment module features</a></span></li><li><span class="section"><a href="#assessment-questionnaires_assessing-applications">6.2. MTA assessment questionnaires</a></span><ul><li><span class="section"><a href="#mta-default-questionnaire_assessment-questionnaires">6.2.1. The default assessment questionnaire</a></span></li><li><span class="section"><a href="#mta-custom-questionnaire_assessment-questionnaires">6.2.2. The custom assessment questionnaire</a></span></li></ul></li><li><span class="section"><a href="#managing-mta-questionnaires_assessing-applications">6.3. Managing assessment questionnaires</a></span></li><li><span class="section"><a href="#assessing-an-application_assessing-applications">6.4. Assessing an application</a></span></li><li><span class="section"><a href="#reviewing-an-application_assessing-applications">6.5. Reviewing an application</a></span></li><li><span class="section"><a href="#reviewing-assessment-report_assessing-applications">6.6. Reviewing an assessment report</a></span></li></ul></li><li><span class="chapter"><a href="#tagging-applications_user-interface-guide">7. Tagging applications with MTA</a></span><ul><li><span class="section"><a href="#creating-application-tags_tagging-applications">7.1. Creating application tags</a></span></li><li><span class="section"><a href="#manual-tagging-of-an-application_tagging-applications">7.2. Manually tagging an application</a></span></li><li><span class="section"><a href="#automatic-tagging-of-an-application_tagging-applications">7.3. Setting up automatic tagging</a></span></li><li><span class="section"><a href="#displaying-the-tags-of-an-application_tagging-applications">7.4. Displaying application tags</a></span></li></ul></li><li><span class="chapter"><a href="#working-with-archetypes_user-interface-guide">8. Working with archetypes</a></span><ul><li><span class="section"><a href="#defining-an-archetype_working-with-archetypes">8.1. Creating an archetype</a></span></li><li><span class="section"><a href="#assessing-an-archetype_working-with-archetypes">8.2. Assessing an archetype</a></span></li><li><span class="section"><a href="#reviewing-an-archetype_working-with-archetypes">8.3. Reviewing an archetype</a></span></li></ul></li><li><span class="chapter"><a href="#centralized-configurations_user-interface-guide">9. Analyzing applications with analysis profiles</a></span><ul><li><span class="section"><a href="#configuring-profile-application-analysis_centralized-configurations">9.1. Configuring an analysis profile</a></span></li><li><span class="section"><a href="#creating-custom-migration-targets_centralized-configurations">9.2. Creating custom migration targets</a></span></li><li><span class="section"><a href="#profile-application-analysis_centralized-configurations">9.3. Using a profile to run an application analysis</a></span></li></ul></li><li><span class="chapter"><a href="#analyzing-applications_user-interface-guide">10. Analyzing applications with MTA</a></span><ul><li><span class="section"><a href="#configuring-and-running-an-application-analysis_analyzing-applications">10.1. Configuring and running an application analysis</a></span></li><li><span class="section"><a href="#reviewing-an-analysis-report_analyzing-applications">10.2. Reviewing analysis details</a></span></li><li><span class="section"><a href="#accessing-unmatched-rules_analyzing-applications">10.3. Accessing unmatched rules</a></span></li><li><span class="section"><a href="#downloading-an-analysis-report_analyzing-applications">10.4. Downloading an analysis report</a></span></li><li><span class="section"><a href="#accessing-analysis-insights_analyzing-applications">10.5. Accessing analysis insights</a></span></li></ul></li><li><span class="chapter"><a href="#controlling-tasks-with-task-manager_user-interface-guide">11. Managing MTA tasks by using Task Manager</a></span><ul><li><span class="section"><a href="#displaying-mta-tasks_controlling-tasks-with-task-manager">11.1. Displaying MTA tasks</a></span></li><li><span class="section"><a href="#reviewing-a-task-log_controlling-tasks-with-task-manager">11.2. Reviewing a task log</a></span></li></ul></li><li><span class="chapter"><a href="#platform-awareness_user-interface-guide">12. Platform awareness in MTA user interface</a></span><ul><li><span class="section"><a href="#creating-source-platform_platform-awareness">12.1. Creating a source platform in MTA user interface</a></span></li><li><span class="section"><a href="#discovering-apps-source-platform_platform-awareness">12.2. Discovering applications through source platform in the Administration view</a></span></li><li><span class="section"><a href="#discovering-apps-source-platform-migration-view_platform-awareness">12.3. Discovering applications through source platform in the Migration view</a></span></li><li><span class="section"><a href="#adding-source-platform-application_platform-awareness">12.4. Associating an application with a source platform</a></span></li><li><span class="section"><a href="#generating-discovery-manifests_platform-awareness">12.5. Generating discovery manifests</a></span></li></ul></li><li><span class="chapter"><a href="#asset-generation-ui_user-interface-guide">13. Generating assets for application deployment in user interface</a></span><ul><li><span class="section"><a href="#configuring-generators_asset-generation-ui">13.1. Configuring a generator</a></span></li><li><span class="section"><a href="#configuring-target-profiles_asset-generation-ui">13.2. Configuring a target profile</a></span></li><li><span class="section"><a href="#configuring-asset-repository_asset-generation-ui">13.3. Configuring an asset repository</a></span></li><li><span class="section"><a href="#generating-deployment-assets_asset-generation-ui">13.4. Generating deployment assets by using a discovery manifest</a></span></li></ul></li><li><span class="chapter"><a href="#configuring-and-using-mta-agents_asset-generation-ui">14. Configuring and using MTA Agents</a></span><ul><li><span class="section"><a href="#agent-workflow_configuring-and-using-mta-agents">14.1. Agent workflow</a></span></li><li><span class="section"><a href="#agent-prerequisites_configuring-and-using-mta-agents">14.2. Prerequisites</a></span></li><li><span class="section"><a href="#cluster-configuration_configuring-and-using-mta-agents">14.3. Cluster configuration</a></span><ul><li><span class="section"><a href="#enable-agent-in-tackle_cluster-configuration">14.3.1. Enable agent in Tackle</a></span></li><li><span class="section"><a href="#tackle-llm-secret_cluster-configuration">14.3.2. Configure the model secret key</a></span></li><li><span class="section"><a href="#llm-gateway-configuration_cluster-configuration">14.3.3. LLM gateway configuration</a></span></li><li><span class="section"><a href="#deploy-large-language-model-gateways_cluster-configuration">14.3.4. Deploy large language model gateways</a></span></li></ul></li><li><span class="section"><a href="#agents-skills-and-workflow-configuration_configuring-and-using-mta-agents">14.4. Agents, skills, and workflow configuration</a></span><ul><li><span class="section"><a href="#configure-skill-cards_agents-skills-and-workflow-configuration">14.4.1. Configure skill cards</a></span></li><li><span class="section"><a href="#configure-skill-collections_agents-skills-and-workflow-configuration">14.4.2. Configure skill collections</a></span></li><li><span class="section"><a href="#configure-agents_agents-skills-and-workflow-configuration">14.4.3. Configure agents</a></span></li><li><span class="section"><a href="#configure-workflows_agents-skills-and-workflow-configuration">14.4.4. Configure workflows</a></span></li></ul></li><li><span class="section"><a href="#configuring-and-using-agent-and-workflow-runs_configuring-and-using-mta-agents">14.5. Configuring and using the agent runs and workflow runs</a></span><ul><li><span class="section"><a href="#configure-agent-runs_configuring-and-using-agent-and-workflow-runs">14.5.1. Configure agent runs</a></span></li><li><span class="section"><a href="#configure-workflow-runs_configuring-and-using-agent-and-workflow-runs">14.5.2. Configure workflow runs</a></span></li></ul></li><li><span class="section"><a href="#troubleshooting-agents_configuring-and-using-mta-agents">14.6. Troubleshooting agents</a></span></li></ul></li><li><span class="appendix"><a href="#contributing-to-mta-development">A. How to contribute to the MTA project</a></span></li></ul></div><section class="chapter" id="intro-to-mta-ui_user-interface-guide"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Introduction to the migration toolkit for applications user interface</h1></div></div></div><p class="_abstract _abstract">
 			You can manage your application migration projects by using the migration toolkit for applications (MTA) user interface (UI).
@@ -772,7 +772,7 @@
 					By completing the default questionnaire and review process, you enrich the system with application knowledge that assessment reports include.
 				</p><p>
 					You can export the default questionnaire to a YAML file:
-				</p><div class="example" id="idm46053843058800"><p class="title"><strong>Example 6.1. The Legacy Pathfinder YAML file</strong></p><div class="example-contents"><pre class="programlisting language-yaml">name: Legacy Pathfinder
+				</p><div class="example" id="idm44959721522976"><p class="title"><strong>Example 6.1. The Legacy Pathfinder YAML file</strong></p><div class="example-contents"><pre class="programlisting language-yaml">name: Legacy Pathfinder
 description: ''
 sections:
   - order: 1
@@ -2007,7 +2007,7 @@ questions:
 						To correctly format your assessment data for use in the migration toolkit for applications (MTA) user interface (UI), use the following YAML template for custom questionnaires.
 					</p><p>
 						You can download the YAML template by clicking <span class="strong strong"><strong>Download YAML template</strong></span> on the <span class="strong strong"><strong>Assessment questionnaires</strong></span> page.
-					</p><div class="example" id="idm46053849297840"><p class="title"><strong>Example 6.2. The YAML template for the custom questionnaire</strong></p><div class="example-contents"><pre class="programlisting language-yaml">name: Uploadable Cloud Readiness Questionnaire Template
+					</p><div class="example" id="idm44959718421344"><p class="title"><strong>Example 6.2. The YAML template for the custom questionnaire</strong></p><div class="example-contents"><pre class="programlisting language-yaml">name: Uploadable Cloud Readiness Questionnaire Template
 description: This questionnaire is an example template for assessing cloud readiness. It serves as a guide for users to create and customize their own questionnaire templates.
 required: true
 sections:
@@ -2110,27 +2110,27 @@ thresholds:
     red: 30
     yellow: 45
     unknown: 5
-...</pre><div class="table" id="idm46053843373824"><p class="title"><strong>Table 6.1. The custom questionnaire fields</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 50%; " class="col_2"/></colgroup><thead><tr><th align="left" valign="top" id="idm46053841380080" scope="col">Questionnaire field</th><th align="left" valign="top" id="idm46053841378992" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm46053841380080">
+...</pre><div class="table" id="idm44959717782256"><p class="title"><strong>Table 6.1. The custom questionnaire fields</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 50%; " class="col_2"/></colgroup><thead><tr><th align="left" valign="top" id="idm44959714424448" scope="col">Questionnaire field</th><th align="left" valign="top" id="idm44959714423360" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm44959714424448">
 									<p>
 										<code class="literal">name</code> (required, string)
 									</p>
-									</td><td align="left" valign="top" headers="idm46053841378992">
+									</td><td align="left" valign="top" headers="idm44959714423360">
 									<p>
 										The name of the questionnaire. This field must be unique for the entire MTA instance.
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm46053841380080">
+									</td></tr><tr><td align="left" valign="top" headers="idm44959714424448">
 									<p>
 										<code class="literal">description</code> (optional, string)
 									</p>
-									</td><td align="left" valign="top" headers="idm46053841378992">
+									</td><td align="left" valign="top" headers="idm44959714423360">
 									<p>
 										A short description of the questionnaire.
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm46053841380080">
+									</td></tr><tr><td align="left" valign="top" headers="idm44959714424448">
 									<p>
 										<code class="literal">thresholds</code> (required)
 									</p>
-									</td><td align="left" valign="top" headers="idm46053841378992">
+									</td><td align="left" valign="top" headers="idm44959714423360">
 									<p>
 										The definition of a threshold for each application or archetype risk category that the risk level affects. Valid threshold values include the following:
 									</p>
@@ -2144,11 +2144,11 @@ thresholds:
 									<p>
 										The higher risk level always takes precedence. For example, if you set the <code class="literal">yellow</code> threshold to 30% and <code class="literal">red</code> to 5%, and set the answers for the application or archetype to have 35% <code class="literal">yellow</code> and 6% <code class="literal">red</code>, the risk level for the application or archetype is red.
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm46053841380080">
+									</td></tr><tr><td align="left" valign="top" headers="idm44959714424448">
 									<p>
 										<code class="literal">riskMessages</code> (required)
 									</p>
-									</td><td align="left" valign="top" headers="idm46053841378992">
+									</td><td align="left" valign="top" headers="idm44959714423360">
 									<p>
 										The messages that reports display for each risk category. The following fields define the risk messages map:
 									</p>
@@ -2161,11 +2161,11 @@ thresholds:
 											</li><li class="listitem">
 												<code class="literal">unknown</code> (required, string): A message that reports display for the unknown risk level.
 											</li></ul></div>
-									</td></tr><tr><td align="left" valign="top" headers="idm46053841380080">
+									</td></tr><tr><td align="left" valign="top" headers="idm44959714424448">
 									<p>
 										<code class="literal">sections</code> (required)
 									</p>
-									</td><td align="left" valign="top" headers="idm46053841378992">
+									</td><td align="left" valign="top" headers="idm44959714423360">
 									<p>
 										A list of sections that the questionnaire must include.
 									</p>
@@ -3410,15 +3410,13 @@ thresholds:
 			</p><p>
 				You must complete the following administrative tasks:
 			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						The large language model (LLM) endpoint
-					</li><li class="listitem">
 						A secret for the LLM API key in the MTA namespace
 					</li><li class="listitem">
 						An LLM gateway
 					</li><li class="listitem">
 						The Tackle custom resource configuration for agents
 					</li></ul></div><section class="section" id="enable-agent-in-tackle_cluster-configuration"><div class="titlepage"><div><div><h3 class="title">14.3.1. Enable agent in Tackle</h3></div></div></div><p class="_abstract _abstract">
-					To deploy the <code class="literal">agentic-controller</code> deployment and install operator-managed agents, skill cards, skill collection, and a workflow, set the <code class="literal">agentic_enabled</code> field in the Tackle custom resource (CR).
+					To deploy the <code class="literal">agentic-controller</code> deployment and install operator-managed agents, skill cards, skill collection, and a workflow, configure the <code class="literal">agentic_enabled</code> field in the Tackle custom resource (CR).
 				</p><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem">
 							Log in to your Red Hat OpenShift cluster.
 						</li><li class="listitem"><p class="simpara">
@@ -3441,7 +3439,7 @@ spec:
 						</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">agentic_enabled</span></dt><dd><p class="simpara">
 										Optional configuration that works if you deployed the Agent Sandbox operator in the cluster. When set to <code class="literal">true</code>, the field enables agentic controller in the backend and agent features in the MTA web console. The field is set to <code class="literal">false</code> by default.
 									</p><p class="simpara">
-										The MTA Operator-managed resources are installed for use:
+										The following MTA Operator-managed resources are installed for use:
 									</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 												Five skill cards
 											</li><li class="listitem">
@@ -3451,7 +3449,7 @@ spec:
 											</li><li class="listitem"><p class="simpara">
 												The <span class="strong strong"><strong>java-ee-to-quarkus</strong></span> workflow
 											</p><p class="simpara">
-												If you edit any of the operator-managed resources, the operator reverts it in its next reconcile.
+												If you edit any of the operator-managed resources, the MTA operator reverts it in its next reconcile.
 											</p></li></ul></div></dd><dt><span class="term">agentic_steer_enabled</span></dt><dd>
 										Optional configuration that allows interactive user input to agents when running agents. The field is set to <code class="literal">false</code> by default.
 									</dd></dl></div></li><li class="listitem"><p class="simpara">
@@ -3461,7 +3459,7 @@ spec:
 						</p><pre class="screen">$ <span class="strong strong"><strong>oc get deployments -n openshift-mta</strong></span></pre></li><li class="listitem"><p class="simpara">
 							Alternatively, verify the agentic controller condition that the MTA Operator posts on the Tackle CR:
 						</p><pre class="screen">$ oc get tackle mta -n openshift-mta -o jsonpath='{.status.conditions[?(@.type=="AgenticControllerReady")]}'</pre></li></ul></div></section><section class="section" id="tackle-llm-secret_cluster-configuration"><div class="titlepage"><div><div><h3 class="title">14.3.2. Configure the model secret key</h3></div></div></div><p class="_abstract _abstract">
-					To enable the agent to use a large language model (LLM) gateway, you must configure a Kubernetes secret that has LLM API key in the Red Hat OpenShift project where you installed the MTA Operator.
+					To enable the agent to use a large language model (LLM) gateway, you must configure a Kubernetes secret that has an LLM API key in the Red Hat OpenShift project where you installed the MTA Operator.
 				</p><div class="itemizedlist"><p class="title"><strong>Prerequisites</strong></p><ul class="itemizedlist" type="disc"><li class="listitem">
 							You have an LLM API key.
 						</li></ul></div><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
@@ -3493,8 +3491,8 @@ spec:
 						</p><pre class="screen">oc get secret <span class="emphasis"><em>&lt;secret-name&gt;</em></span> -o yaml</pre></li></ul></div></section><section class="section" id="llm-gateway-configuration_cluster-configuration"><div class="titlepage"><div><div><h3 class="title">14.3.3. LLM gateway configuration</h3></div></div></div><p class="_abstract _abstract">
 					The large language model (LLM) gateways for agents are LLM provider-model pairs that you deploy as custom resources (CRs) in your cluster.
 				</p><p>
-					You can copy and edit the following sample LLM gateway configurations:
-				</p><div class="formalpara"><p class="title"><strong>Example <code class="literal">gateway_vertex_ai.yaml</code></strong></p><p>
+					You can copy and edit the following sample LLM gateway configurations into a gateway YAML file:
+				</p><div class="formalpara"><p class="title"><strong>Example Google Vertex AI gateway</strong></p><p>
 						
 <pre class="programlisting language-yaml">apiVersion: konveyor.io/v1alpha1
 kind: Gateway
@@ -3511,7 +3509,7 @@ spec:
     tier: premium</pre>
 					</p></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 						Google Vertex AI gateway has no <code class="literal">credentialRef.key</code> field. When the key field is not set, the entire Secret is exposed to the sandboxed container with the Secret keys as variable names. This configuration is ideal for multi-variable credentials such as Google Cloud Platform Application Default Credentials (GCP ADC).
-					</p></div></div><div class="formalpara"><p class="title"><strong>Example <code class="literal">gateway_openai.yaml</code></strong></p><p>
+					</p></div></div><div class="formalpara"><p class="title"><strong>Example OpenAI gateway</strong></p><p>
 						
 <pre class="programlisting language-yaml">apiVersion: konveyor.io/v1alpha1
 kind: Gateway
@@ -3527,7 +3525,7 @@ spec:
     name: gpt-4o
     contextWindow: 128000
     tier: premium</pre>
-					</p></div><div class="formalpara"><p class="title"><strong>Example <code class="literal">gateway_anthropic.yaml</code></strong></p><p>
+					</p></div><div class="formalpara"><p class="title"><strong>Example Anthropic gateway</strong></p><p>
 						
 <pre class="programlisting language-yaml">apiVersion: konveyor.io/v1alpha1
 kind: Gateway
@@ -3543,7 +3541,7 @@ spec:
     name: claude-sonnet-4-5-20250929
     contextWindow: 200000
     tier: premium</pre>
-					</p></div><div class="formalpara"><p class="title"><strong>Example <code class="literal">gateway_aws_bedrock.yaml</code></strong></p><p>
+					</p></div><div class="formalpara"><p class="title"><strong>Example AWS Bedrock gateway</strong></p><p>
 						
 <pre class="programlisting language-yaml">apiVersion: konveyor.io/v1alpha1
 kind: Gateway
@@ -3560,7 +3558,7 @@ spec:
     tier: premium</pre>
 					</p></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 						Amazon Bedrock gateway has no <code class="literal">credentialRef.key</code> field. When the key field is not set, the entire Secret is exposed to the sandboxed container with the Secret keys as variable names. This configuration is ideal for multi-variable credentials such as Amazon Web Services Signature Version 4 (AWS SigV4).
-					</p></div></div><div class="formalpara"><p class="title"><strong>Example <code class="literal">gateway_xai.yaml</code></strong></p><p>
+					</p></div></div><div class="formalpara"><p class="title"><strong>Example xAI gateway</strong></p><p>
 						
 <pre class="programlisting language-yaml">apiVersion: konveyor.io/v1alpha1
 kind: Gateway
@@ -3580,7 +3578,7 @@ spec:
     contextWindow: 256000
     tier: premium</pre>
 					</p></div></section><section class="section" id="deploy-large-language-model-gateways_cluster-configuration"><div class="titlepage"><div><div><h3 class="title">14.3.4. Deploy large language model gateways</h3></div></div></div><p class="_abstract _abstract">
-					As a cluster administrator, deploy the large language model (LLM) endpoints or provider-model pairs as gateways for agents in your cluster.
+					As a cluster administrator, deploy the large language model (LLM) gateways or provider-model pairs for agents in your cluster.
 				</p><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem">
 							Log in to your cluster through the Red Hat OpenShift Container Platform command-line interface.
 						</li><li class="listitem"><p class="simpara">
@@ -3607,9 +3605,11 @@ spec:
 									Enter a name for the skill card.
 								</li><li class="listitem">
 									Optional: Enter a display name for the skill card.
-								</li><li class="listitem">
-									Enter a description that is shown in the console. The agent reads the description you provide in the <code class="literal">skill.md</code> file.
-								</li><li class="listitem">
+								</li><li class="listitem"><p class="simpara">
+									Enter a description that is shown in the migration toolkit for applications (MTA) web console. The description field is the metadata displayed in the skill card details.
+								</p><p class="simpara">
+									The agent reads the description you provide in the <code class="literal">skill.md</code> file.
+								</p></li><li class="listitem">
 									Select the type. The default option is <code class="literal">skill</code>. The agent reads only the name and description of a skill. When the agent decides that the skill is relevant for a task, MTA loads the skill content for the agent. MTA always loads rule for every prompt of every agent that refers to the rule type. Rules are part of the LLM context window.
 								</li><li class="listitem">
 									Select one of <span class="strong strong"><strong>Inline</strong></span>, <span class="strong strong"><strong>Image</strong></span>, or <span class="strong strong"><strong>Git</strong></span> as the skill source.
@@ -3656,7 +3656,7 @@ spec:
 								</li></ol></div></li><li class="listitem"><p class="simpara">
 							If you selected <span class="strong strong"><strong>Enumerate an image</strong></span>, configure the following:
 						</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem">
-									Image URL
+									Enter the image URL
 								</li><li class="listitem">
 									Optional: select the skill or rule type.
 								</li></ol></div></li><li class="listitem">
@@ -3679,9 +3679,11 @@ spec:
 									Configure the image reference to a pre-built Open Container Initiative (OCI) image.
 								</li><li class="listitem">
 									Configure the prompt for the agent.
-								</li><li class="listitem">
-									Optional: Select an LLM gateway for the agent. If the agent does not list any LLM gateway, the agent run uses any ready LLM gateway deployed in the cluster.
-								</li><li class="listitem">
+								</li><li class="listitem"><p class="simpara">
+									Optional: Select an LLM gateway for the agent. An agent run can use only the LLM gateway you select.
+								</p><p class="simpara">
+									If you omit the LLM gateway configuration for the agent, then the agent does not list any LLM gateway. As a result, the agent run uses any ready LLM gateway available in the cluster.
+								</p></li><li class="listitem">
 									Optional: Select skill cards that the agent can use.
 								</li><li class="listitem">
 									Optional: Configure the skill collection that the agent can use.
@@ -3718,14 +3720,16 @@ spec:
 								</p><div class="orderedlist"><ol class="orderedlist" type="i"><li class="listitem">
 											Enter a lowercase alphanumeric name with 63 characters in maximum. You can use dots and hyphens.
 										</li><li class="listitem"><p class="simpara">
-											Select an agent.
+											Select an agent. You can select the same agent in different stages but the stage names must be unique.
 										</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-												Every agent in different stages must refer to the same large language model (LLM) gateway or you must not configure an LLM gateway for any of the agents in the workflow stages.
+												All agents in different stages must either list at least one common large language model (LLM) gateway or skip reference to any LLM gateway. You can select the shared LLM gateway for a workflow run.
 											</p></div></div></li><li class="listitem">
 											Optional: Configure stage-specific instructions.
 										</li></ol></div></li></ol></div></li><li class="listitem">
 							Click <span class="strong strong"><strong>Create</strong></span>.
-						</li></ol></div></section></section><section class="section" id="configuring-and-using-agent-and-workflow-runs_configuring-and-using-mta-agents"><div class="titlepage"><div><div><h2 class="title">14.5. Configuring and using the agent runs and workflow runs</h2></div></div></div><p class="_abstract _abstract">
+						</li></ol></div><div class="itemizedlist _additional-resources"><p class="title"><strong>Additional resources</strong></p><ul class="itemizedlist _additional-resources" type="disc"><li class="listitem">
+							<a class="link" href="#configure-workflow-runs_configuring-and-using-agent-and-workflow-runs" title="14.5.2. Configure workflow runs">Configure workflow runs</a>
+						</li></ul></div></section></section><section class="section" id="configuring-and-using-agent-and-workflow-runs_configuring-and-using-mta-agents"><div class="titlepage"><div><div><h2 class="title">14.5. Configuring and using the agent runs and workflow runs</h2></div></div></div><p class="_abstract _abstract">
 				As a migrator, you can start a single-agent run or a multi-stage workflow depending on the complexity and the need for context continuity in migration tasks.
 			</p><section class="section" id="configure-agent-runs_configuring-and-using-agent-and-workflow-runs"><div class="titlepage"><div><div><h3 class="title">14.5.1. Configure agent runs</h3></div></div></div><p class="_abstract _abstract">
 					As a migrator, configure and monitor an agent run that tracks an agent included in the agent run.
@@ -3748,7 +3752,7 @@ spec:
 								</li><li class="listitem"><p class="simpara">
 									Enter the target Git repository branch to which the agent pushes changes to source code.
 								</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-										The target branch must be different from the application source branch. You must also configure a default source credential with write access to the Git repository and link the credential to the application.
+										The target branch must be different from the application source branch. You must also configure a source credential with write access to the Git repository and link the credential to the application.
 									</p></div></div></li><li class="listitem">
 									Optional: Enter task-specific instructions for the agent.
 								</li></ol></div></li><li class="listitem"><p class="simpara">
@@ -3770,7 +3774,9 @@ spec:
 						</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem">
 									Select a workflow.
 								</li><li class="listitem"><p class="simpara">
-									Select a gateway from the list. You can omit this configuration only when agents at each stage in a workflow refers to the same large language model (LLM) gateway. The agent controller then uses the shared LLM gateway.
+									Select a large language model (LLM) gateway for the workflow run. The workflow run LLM gateway must be listed by agents in different stages of the workflow.
+								</p><p class="simpara">
+									You can omit this configuration only when agents at each stage in a workflow refers to the same large language model (LLM) gateway. The agent controller then uses the shared LLM gateway.
 								</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 										The default agents in MTA do not refer to an LLM gateway. When you use such agents in a workflow, you must select an LLM gateway for the workflow run.
 									</p></div></div></li><li class="listitem">
@@ -3782,8 +3788,8 @@ spec:
 						</li></ol></div><div class="itemizedlist"><p class="title"><strong>Verification</strong></p><ul class="itemizedlist" type="disc"><li class="listitem">
 							Verify the workflow run on the <span class="strong strong"><strong>Workflow runs</strong></span> page.
 						</li></ul></div></section></section><section class="section" id="troubleshooting-agents_configuring-and-using-mta-agents"><div class="titlepage"><div><div><h2 class="title">14.6. Troubleshooting agents</h2></div></div></div><p class="_abstract _abstract">
-				You can troubleshoot common issues with agents, agent runs, and gateways.
-			</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Agent completes the run but fails to push the commits</span></dt><dd><p class="simpara">
+				You can troubleshoot common issues with agents, agent runs, and large language model (LLM) gateways.
+			</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Agent performs the work but fails to push the commits</span></dt><dd><p class="simpara">
 							<span class="strong strong"><strong>Cause</strong></span>
 						</p><p class="simpara">
 							The agent completes the task but does not have the necessary permission to write to the Git repository target branch.
@@ -3801,9 +3807,7 @@ spec:
 							<span class="strong strong"><strong>Resolution</strong></span>
 						</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem">
 									Install the Red Hat build of Agent Sandbox from the software catalog in the Red Hat OpenShift cluster.
-								</li></ol></div></dd><dt><span class="term">UI agentic pages show errors or do not load</span></dt><dd><p class="simpara">
-							Hub returns 500 errors and the agent runs and agents pages display errors or fail to load.
-						</p><p class="simpara">
+								</li></ol></div></dd><dt><span class="term">UI agentic pages show 500 errors or Agentic section pages do not load</span></dt><dd><p class="simpara">
 							<span class="strong strong"><strong>Cause</strong></span>
 						</p><p class="simpara">
 							The MTA Hub reads <code class="literal">konveyor.io</code> resources from its own namespace. This issue occurs when Role-Based Access Control (RBAC) permissions are missing or when you create the resources in the wrong namespace.
@@ -3816,9 +3820,7 @@ spec:
 									Verify that the agent resource is available in the correct namespace:
 								</p><pre class="programlisting language-terminal">$ oc get agents.konveyor.io -n openshift-mta</pre></li><li class="listitem">
 									If resources were applied to different namespaces, recreate them in the Hub namespace by using the <code class="literal">-n openshift-mta</code> flag.
-								</li></ol></div></dd><dt><span class="term">LLM Gateway shows "Verified: false" status</span></dt><dd><p class="simpara">
-							The large language model (LLM) gateway resource displays connection verification failures.
-						</p><p class="simpara">
+								</li></ol></div></dd><dt><span class="term">LLM Gateway shows "Verified: false" status for connection verification failures</span></dt><dd><p class="simpara">
 							<span class="strong strong"><strong>Cause</strong></span>
 						</p><p class="simpara">
 							The agentic controller cannot reach the LLM endpoint because of incorrect URLs, missing credential secrets, or network policy restrictions.
@@ -3830,9 +3832,7 @@ spec:
 									Verify that the credential secret exists with the correct keys.
 								</p><pre class="programlisting language-terminal">oc get secrets -n openshift-mta</pre></li><li class="listitem">
 									Check that network policies allow egress from the agentic controller namespace.
-								</li></ol></div></dd><dt><span class="term">Agent runs created with <code class="literal">oc apply</code> cannot reach the Hub</span></dt><dd><p class="simpara">
-							Agent runs created by using <code class="literal">oc apply</code> lack authentication tokens needed for Hub communication.
-						</p><p class="simpara">
+								</li></ol></div></dd><dt><span class="term">Agent runs created with <code class="literal">oc apply</code> lack authentication tokens needed for Hub communication</span></dt><dd><p class="simpara">
 							<span class="strong strong"><strong>Cause</strong></span>
 						</p><p class="simpara">
 							Agent runs created by using <code class="literal">oc apply</code> lack the MTA Hub token and application coordinates (<code class="literal">HUB_TOKEN</code>, <code class="literal">APP_ID</code>, and <code class="literal">TARGET_BRANCH</code>) that the Hub injects. As a result, the agent harness cannot clone the application or push commits.
@@ -3840,28 +3840,24 @@ spec:
 							<span class="strong strong"><strong>Resolution</strong></span>
 						</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 									Create agent runs through the MTA web console or the Hub API instead of using <code class="literal">oc apply</code>.
-								</li></ul></div></dd><dt><span class="term">Agent shows "Ready: False"</span></dt><dd><p class="simpara">
-							The agent resource remains in an unready state.
-						</p><p class="simpara">
+								</li></ul></div></dd><dt><span class="term">Agent remains in an unready state with "Ready: False" status</span></dt><dd><p class="simpara">
 							<span class="strong strong"><strong>Cause</strong></span>
 						</p><p class="simpara">
 							Referenced gateways or skill cards do not exist or are not in a healthy state.
 						</p><p class="simpara">
 							<span class="strong strong"><strong>Resolution</strong></span>
 						</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p class="simpara">
-									Verify that all referenced gateways exist and are ready:
+									Verify that all referenced LLM gateways exist and are ready:
 								</p><pre class="programlisting language-terminal">$ oc get gateways.konveyor.io -n openshift-mta</pre></li><li class="listitem"><p class="simpara">
 									Verify that all referenced skill cards exist and are ready:
 								</p><pre class="programlisting language-terminal">$ oc get skillcards -n openshift-mta</pre></li></ol></div></dd><dt><span class="term">Agent run remains in "Pending" state</span></dt><dd><p class="simpara">
-							The agent run phase remains in the Pending state indefinitely.
-						</p><p class="simpara">
 							<span class="strong strong"><strong>Cause</strong></span>
 						</p><p class="simpara">
 							The referenced agent is not ready, the selected gateway does not appear in the agent’s gateway list, or the Agent Sandbox is not installed and operational.
 						</p><p class="simpara">
 							<span class="strong strong"><strong>Resolution</strong></span>
 						</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem">
-									Verify that the referenced agent is in a <code class="literal">Ready</code> state.
+									Verify that the referenced agent is in <code class="literal">Ready</code> state.
 								</li><li class="listitem">
 									Verify that the selected gateway appears in the agent’s gateway list.
 								</li><li class="listitem">
@@ -3904,7 +3900,7 @@ spec:
 					<a class="link" href="https://developer.jboss.org/en/windup">MTA forums</a>
 				</li><li class="listitem">
 					<a class="link" href="https://issues.redhat.com/projects/MTA/issues/MTA-4961?filter=allopenissues">Jira issues tracker</a>
-				</li></ul></div></section><div><div xml:lang="en-US" class="legalnotice" id="idm46053841717936"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+				</li></ul></div></section><div><div xml:lang="en-US" class="legalnotice" id="idm44959716759760"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2026 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
