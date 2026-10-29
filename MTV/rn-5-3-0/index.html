@@ -1,137 +1,683 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Release notes</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.2"/><meta name="description" content="Review new features, known issues, and resolved issues for Migration Toolkit for Virtualization 5.0."/><link rel="next" href="#idm46191445951936" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46191452880496"><div class="titlepage"><div><div class="producttitle"><span class="productname">Migration Toolkit for Virtualization</span> <span class="productnumber">5.0</span></div><div><h1 class="title">Release notes</h1></div><div><h2 class="subtitle">Release notes for the Migration Toolkit for Virtualization 5.0 release</h2></div><div><div xml:lang="en-US" class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Red Hat Modernization and Migration</span> <span class="surname">Documentation Team</span></h3><code class="email"><a class="email" href="mailto:ccs-mms-docs@redhat.com">ccs-mms-docs@redhat.com</a></code></div></div></div><div><a href="#idm46191429456448">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
-				Review new features, known issues, and resolved issues for Migration Toolkit for Virtualization 5.0.
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm46191445951936">Preface</a></span></li><li><span class="chapter"><a href="#ref_rn-5-0_release-notes">1. Migration Toolkit for Virtualization 5.0</a></span><ul><li><span class="section"><a href="#ref_new-features-and-enhancements-5-0_release-notes">1.1. MTV new features and enhancements</a></span></li><li><span class="section"><a href="#ref_resolved-issues-5-0-0_release-notes">1.2. MTV fixed issues 5.0.0</a></span></li><li><span class="section"><a href="#ref_known-issues-5-0_release-notes">1.3. MTV known issues</a></span></li></ul></li></ul></div><section class="preface" id="idm46191445951936"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p class="_abstract _abstract">
-			Review these release notes for Migration Toolkit for Virtualization (MTV) version 5.0.
-		</p></section><section class="chapter" id="ref_rn-5-0_release-notes"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Migration Toolkit for Virtualization 5.0</h1></div></div></div><p class="_abstract _abstract">
-			The release notes describe technical changes, new features and enhancements, known issues, and fixed issues.
-		</p><section class="section" id="ref_new-features-and-enhancements-5-0_release-notes"><div class="titlepage"><div><div><h2 class="title">1.1. MTV new features and enhancements</h2></div></div></div><p class="_abstract _abstract">
-				Migration Toolkit for Virtualization (MTV) 5.0 introduces the following features and enhancements.
-			</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Selecting predefined secrets for LUKS encryption supported during plan creation</span></dt><dd><p class="simpara">
-							Previously, you had to manually enter LUKS encryption keys in the UI when creating a migration plan. With this update, MTV supports selecting a predefined secret containing LUKS encryption keys during plan creation. As a result, you can select an existing secret instead of manually entering encryption keys for each plan.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-2834">MTV-2834</a>
-						</p></dd><dt><span class="term">Configuring node selectors for importer pods supported for warm migrations</span></dt><dd><p class="simpara">
-							Previously, configuring node selectors for importer pods, also known as <code class="literal">virt-v2v</code> Convertor pods, was supported for cold migrations only. With this update, MTV supports configuring node selectors for importer pods during warm migrations from VMware virtual machines (VMs). As a result, you can schedule destination nodes for <code class="literal">virt-v2v</code> Convertor pods during warm migrations.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-3208">MTV-3208</a>
-						</p></dd><dt><span class="term">Dedicated migration hosts for VMware vSphere migrations (Technology Preview)</span></dt><dd><p class="simpara">
-							Previously, MTV extracted migration data directly from the ESXi host where the source virtual machine (VM) was registered. With this update, you can designate specific ESXi hosts as dedicated migration hosts in the <code class="literal">StorageMap</code> custom resource (CR). You specify these hosts in the <code class="literal">vsphereXcopyPluginConfig</code> section of the storage map. As a result, data extraction tasks run on isolated hosts, protecting production workloads from migration load. This capability is a Technology Preview feature.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-3264">MTV-3264</a>
-						</p></dd><dt><span class="term">Support for Nutanix as a source provider (Technology Preview)</span></dt><dd><p class="simpara">
-							With this release, MTV enables you to define Nutanix as a source provider by using the web console or command-line interface (CLI). You can define Nutanix as a source provider by using the UI or the command-line interface (CLI). This capability is a Technology Preview feature.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-4465">MTV-4465</a>
-						</p></dd><dt><span class="term">Microsoft Hyper-V migrations are fully supported</span></dt><dd><p class="simpara">
-							With this release, migrations from Microsoft Hyper-V are fully supported. Previously, this feature was available as a Technology Preview. You can migrate VMs from Microsoft Hyper-V hosts and Windows Server Failover Clusters to OpenShift Virtualization.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-4461">MTV-4461</a>
-						</p></dd><dt><span class="term">Configuring storage access modes supported in the web console</span></dt><dd><p class="simpara">
-							Previously, you had to manually edit YAML files to configure storage access modes. With this update, MTV enables you to select storage access modes directly on the <span class="strong strong"><strong>Storage maps</strong></span> page in the web console. You can select <code class="literal">ReadWriteOnce</code>, <code class="literal">ReadWriteMany</code>, or <code class="literal">ReadOnlyMany</code> modes for each storage mapping. In addition, the console displays a warning if you select <code class="literal">ReadWriteOnce</code> for a storage type capable of <code class="literal">ReadWriteMany</code>.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-5496">MTV-5496</a>
-						</p></dd><dt><span class="term">Option to resume warm migrations after conversion failure (Technology Preview)</span></dt><dd><p class="simpara">
-							If a migration fails during disk conversion after a successful disk copy, you can resume the migration without recopying disks. This feature applies to migrations where disk copy and conversion are separate phases (for example, warm migrations or cold migrations with storage offload). If the source virtual machine (VM) was powered on after the failed migration, the copied disks may be inconsistent. Start a new migration instead. This capability is a Technology Preview feature.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-6993">MTV-6993</a>
-						</p></dd><dt><span class="term">Excluding specific disks from migration plan</span></dt><dd><p class="simpara">
-							Previously, you could exclude only shared disks attached to a virtual machine (VM) in a migration. With this update, you can exclude any disk attached to a VM in the Plan settings section of a migration plan and the plan wizard.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-6426">MTV-6426</a>
-						</p></dd><dt><span class="term">Offline migrations in ROKS no longer fail due to certificate errors</span></dt><dd><p class="simpara">
-							Previously, offline virtual machine (VM) migrations failed in Red Hat OpenShift on IBM Cloud (ROKS) environments. This occurred because MTV configured invalid certificates on intermediate <code class="literal">DataVolume</code> resources. As a consequence, users encountered certificate errors that blocked the migrations. With this update, MTV probes the export proxy Transport Layer Security (TLS) endpoint before setting the certificate configuration map. It omits the certificate if the <code class="literal">VMExport</code> certificate authority (CA) does not verify but system trust does. As a result, offline migrations in ROKS environments complete successfully despite the unverified certificates.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-6458">MTV-6458</a>
-						</p></dd><dt><span class="term">Support for immediate and planned cutover options for warm migrations</span></dt><dd><p class="simpara">
-							Previously, you had to pick a past date as a workaround to start immediate cutover for warm migrations. With this release, the Plan cutover menu includes <span class="strong strong"><strong>Cutover as soon as possible</strong></span> (default) and <span class="strong strong"><strong>Cutover at a specific time</strong></span> options in the web console. As a result, you do not need to select a past date for an immediate cutover.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-5513">MTV-5513</a>
-						</p></dd><dt><span class="term">Post-migration status tracking for Windows virtual machines</span></dt><dd><p class="simpara">
-							Previously, MTV showed the Completed status even though the Windows virtual machine is performing post-migration tasks. With this update, you can check the post-migration status for Windows VMs when they reboot multiple times to install drivers, guest agents, remove VMware tools, or configure networking.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-5506">MTV-5506</a>
-						</p></dd><dt><span class="term">Checking supported guest operating system for virtual machines</span></dt><dd><p class="simpara">
-							Previously, you had to manually check whether the guest operating system (OS) was supported while selecting a virtual machine in a plan. With this update, you can view the supported guest OS for selected VMs in a plan, on the Plan details page, and on the Provider details page. You can also filter the VMs by the supported guest OS before you create a migration plan.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-5502">MTV-5502</a>
-						</p></dd><dt><span class="term">Excluding specific disks from migration plan</span></dt><dd><p class="simpara">
-							Before this update, you could exclude only shared disks attached to a virtual machine (VM) in a migration. With this update, you can exclude any disk attached to a VM in the Plan settings section of a migration plan and the plan wizard.
-						</p><p class="simpara">
-							link: <a class="link" href="https://redhat.atlassian.net/browse/MTV-6426">MTV-6426</a>
-						</p></dd><dt><span class="term">Two-phase virtual hard disk transfer for Hyper-V VM transfers (Developer Preview)</span></dt><dd><p class="simpara">
-							With this release, MTV performs a two-phase transfer of Virtual Hard Disk (VHD) and Virtual Hard Disk v2 (VHDX) for Hyper-V virtual machines (VMs). When you set <code class="literal">preCopySourceDisks:type</code> to <code class="literal">true</code>, MTV copies the VHDX files from the Server Message Block (SMB) share and the <code class="literal">virt-v2v</code> tool then performs in-place guest operating system customization. This capability is a Developer Preview feature.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-6718">MTV-6718</a>
-						</p></dd><dt><span class="term">Migrating Windows and Linux virtual machines from IPv6 VMware environments</span></dt><dd><p class="simpara">
-							Before this update, migrating Windows and Linux virtual machines (VMs) with IPv6 configurations resulted in errors. With this update, you can migrate Windows VMs with static IPv6 addresses and routing configurations, connect to vCenter servers and ESXi hosts with IPv6-only or dual-stack configurations, and run MTV on IPv6-only Red Hat OpenShift clusters.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-2897">MTV-2897</a>
-						</p></dd><dt><span class="term">Centralized provider alerts on the Provider details page</span></dt><dd><p class="simpara">
-							Provider alerts are centralized on the <span class="strong strong"><strong>Provider details</strong></span> page. As a result, you can view all relevant provider warnings in one place rather than in the <span class="strong strong"><strong>Conditions</strong></span> section.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-6656">MTV-6656</a>
-						</p></dd><dt><span class="term">Storage copy offload migrations report XCOPY usage per disk</span></dt><dd><p class="simpara">
-							With this update, MTV propagates the <code class="literal">xcopyUsed</code> indicator from the populator pod to the migration plan status. Previously, this information was only available as a transient Prometheus metric that was lost when the populator pod completed. Each disk transfer task includes an <code class="literal">xcopyUsed</code> annotation that shows whether the storage array used hardware-accelerated copy or a software fallback. As a result, you can identify which disks benefited from XCOPY and troubleshoot performance differences across storage configurations.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-5871">MTV-5871</a>
-						</p></dd><dt><span class="term">Monitoring runtime migration issues supported on MTV web console</span></dt><dd><p class="simpara">
-							Before this update, you had to manually track plan-related alerts in a specific plan. With this release, MTV displays automated alerts for migration failures, stalled migrations, persistent volume claim provisioning issues, and insufficient resources in the target namespace. To make monitoring large-scale migration easier, you can track migration issues on the Overview page or on the Plan details page.
-						</p><p class="simpara">
-							link: <a class="link" href="https://redhat.atlassian.net/browse/MTV-5498">MTV-5498</a>
-						</p></dd><dt><span class="term">IP address settings for vNICs of Windows VMs in the NetworkMap</span></dt><dd><p class="simpara">
-							With this release, you can configure the network IP mode for virtual network interface cards (vNICs) of Windows virtual machines (VMs) in the <code class="literal">NetworkMap</code>. As a result, you can specify whether vNICs preserve the static IP address from the source network, use a Dynamic Host Configuration Protocol (DHCP)-assigned IP address, or are excluded from the static IP configuration after migration.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-5268">MTV-5268</a>
-						</p></dd><dt><span class="term">Deep inspection is fully supported</span></dt><dd><p class="simpara">
-							With this release, deep inspection is fully supported. Before this update, this feature was available as a Technology Preview. You can use deep inspection to analyze virtual machine (VM) disk images before migration and find compatibility issues that standard inspection might miss. As a result, you can plan remediation before starting the migration.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-4473">MTV-4473</a>
-						</p></dd><dt><span class="term">Automated removal of VMware components in migrated virtual machines</span></dt><dd><p class="simpara">
-							Before this update, Windows virtual machines (VMs) had VMware drivers and tools after migration. As a result, service stack failures and compatibility issues with KVM or virtio affected the migrated OpenShift VMs. With this release, the VMware components are automatically removed in the post-migration workflow after you configure <code class="literal">feature_vsphere_vmware_driver_removal:true</code> in the <code class="literal">ForkliftController</code> custom resource (CR).
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-4546">MTV-4546</a>
-						</p></dd><dt><span class="term">MTV Operator needed in remote clusters for virtual machine migrations</span></dt><dd><p class="simpara">
-							With this release, you must install the MTV Operator in the remote Red Hat OpenShift cluster to migrate virtual machines from supported providers. As a result, if you do not install the MTV Operator in the target cluster, the configured provider cannot detect MTV custom resource definitions in the remote cluster and issues a warning.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-5335">MTV-5335</a>
-						</p></dd></dl></div></section><section class="section" id="ref_resolved-issues-5-0-0_release-notes"><div class="titlepage"><div><div><h2 class="title">1.2. MTV fixed issues 5.0.0</h2></div></div></div><p class="_abstract _abstract">
-				You can use tools available in <a class="link" href="https://access.redhat.com/labs/">Red Hat Customer Portal Labs</a> to find security issues and errata advisory MTV.
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Release notes</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.2"/><meta name="description" content="This document describes new features, known issues, and resolved issues for the Migration Toolkit for Virtualization 2.9."/><link rel="next" href="#making-open-source-more-inclusive" title="Making open source more inclusive"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46324022675936"><div class="titlepage"><div><div class="producttitle"><span class="productname">Migration Toolkit for Virtualization</span> <span class="productnumber">2.9</span></div><div><h1 class="title">Release notes</h1></div><div><h2 class="subtitle">Version 2.9</h2></div><div><div xml:lang="en-US" class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Red Hat Modernization and Migration</span> <span class="surname">Documentation Team</span></h3><code class="email"><a class="email" href="mailto:ccs-mms-docs@redhat.com">ccs-mms-docs@redhat.com</a></code></div></div></div><div><a href="#idm46324007464448">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+				This document describes new features, known issues, and resolved issues for the Migration Toolkit for Virtualization 2.9.
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></span></li><li><span class="chapter"><a href="#rn-29_release-notes">1. Migration Toolkit for Virtualization 2.9</a></span><ul><li><span class="section"><a href="#technical-changes-2-9_release-notes">1.1. Technical changes</a></span></li><li><span class="section"><a href="#mtv-upgrade-2-9-0_release-notes">1.2. Upgrade notes MTV 2.9.0</a></span></li><li><span class="section"><a href="#new-features-and-enhancements-2-9_release-notes">1.3. New features and enhancements</a></span></li><li><span class="section"><a href="#rn-resolved-issues_release-notes">1.4. Resolved issues</a></span><ul><li><span class="section"><a href="#resolved-issues-2-9-0_release-notes">1.4.1. Resolved issues 2.9.0</a></span></li></ul></li><li><span class="section"><a href="#known-issues-2-9_release-notes">1.5. Known issues</a></span></li></ul></li><li><span class="chapter"><a href="#release-notes-addendum_release-notes">2. Release notes addendum</a></span><ul><li><span class="section"><a href="#mtv-selected-packages-2-8_release-notes">2.1. MTV selected packages</a></span></li></ul></li></ul></div><section class="preface" id="making-open-source-more-inclusive"><div class="titlepage"><div><div><h1 class="title">Making open source more inclusive</h1></div></div></div><p>
+			Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a class="link" href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright’s message</a>.
+		</p></section><section class="chapter" id="rn-29_release-notes"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Migration Toolkit for Virtualization 2.9</h1></div></div></div><p>
+			The release notes describe technical changes, new features and enhancements, known issues, and resolved issues.
+		</p><section class="section" id="technical-changes-2-9_release-notes"><div class="titlepage"><div><div><h2 class="title">1.1. Technical changes</h2></div></div></div><p>
+				Migration Toolkit for Virtualization (MTV) 2.9 has the following technical changes:
 			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
-						<a class="link" href="https://access.redhat.com/labs/cvechecker/">Red Hat CVE Checker</a>:
+						Upgraded <code class="literal">kubevirt</code> version to v1.5.1
 					</p><p class="simpara">
-						Search and find Common Vulnerabilities and Errors (CVEs) affecting MTV by uploading comma-separated CVE IDs or filter CVEs by date range.
-					</p></li><li class="listitem"><p class="simpara">
-						<a class="link" href="https://access.redhat.com/errata-search/#/">Red Hat Product Errata Advisory Checker</a>:
-					</p><p class="simpara">
-						Filter advisory type by year for a specific version of MTV.
-					</p></li><li class="listitem"><p class="simpara">
-						<a class="link" href="https://access.redhat.com/product-life-cycles?product=Red%20Hat%20OpenShift%20Container%20Platform,migration%20toolkit%20for%20virtualization">Product Life Cycles</a>
-					</p><p class="simpara">
-						Use the product life cycles to find information about full-supported versions, maintenance period for supported versions, and the extended support for MTV
-					</p></li></ul></div></section><section class="section" id="ref_known-issues-5-0_release-notes"><div class="titlepage"><div><div><h2 class="title">1.3. MTV known issues</h2></div></div></div><p class="_abstract _abstract">
-				Migration Toolkit for Virtualization (MTV) 5.0 has the following known issues.
-			</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">Windows Server 2019 VM enters a reboot loop after migration with VMware driver removal is enabled</span></dt><dd><p class="simpara">
-							After you migrate a Windows Server 2019 virtual machine (VM) from vSphere with <code class="literal">feature_vsphere_vmware_driver_removal:true</code> in the <code class="literal">ForkliftController</code> custom resource (CR), the VM reboots in an indefinite loop. As a consequence, you are unable to log in to the VM even after the VMware driver is removed without any errors.
-						</p><p class="simpara">
-							No known workaround exists.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-6506">MTV-6506</a>
-						</p></dd><dt><span class="term">VMware driver left in Windows VMs after migration</span></dt><dd><p class="simpara">
-							After you migrate a Windows virtual machine (VM) from VMware to Red Hat OpenShift with <code class="literal">feature_vsphere_vmware_driver_removal:true</code> in the <code class="literal">ForkliftController</code> custom resource (CR), the VMware driver remains in the VM. Consequently, the VM can be affected by unnecessary service failures and error logs.
-						</p><p class="simpara">
-							No known workaround exists.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-6525">MTV-6525</a>
-						</p></dd><dt><span class="term">MTV console plugin fails to load on IPv6-only OpenShift clusters</span></dt><dd><p class="simpara">
-							When MTV 2.9.1 is deployed on an IPv6-only OpenShift cluster, an incorrect API endpoint prevents the forklift-console-plugin from serving a valid plugin manifest, displaying the error "Failed to get a valid plugin manifest from /api/plugins/forklift-console-plugins/". While the forklift-ui-plugin pod runs successfully, the console plugin cannot load, preventing access to the MTV user interface in the OpenShift web console. This issue affects all IPv6-only cluster deployments with OpenShift 4.19.7 and CNV 4.19.1.
-						</p><p class="simpara">
-							<span class="strong strong"><strong>Workaround:</strong></span> None. Deploy MTV on dual-stack or IPv4 clusters until this issue is resolved.
-						</p><p class="simpara">
-							<a class="link" href="https://redhat.atlassian.net/browse/MTV-3116">MTV-3116</a>
-						</p></dd></dl></div></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm46191429456448"><h1 class="legalnotice">Legal Notice</h1><div class="para">
-		Copyright <span class="trademark"/>© 2026 Red Hat, Inc.
+						MTV previously did not allow users to override the default preference for virtual Trusted Platform Module (vTPM) devices in virtual machines. In MTV 2.9.0, the <code class="literal">kubevirt</code> version is upgraded to v1.5.1, which introduces the <code class="literal">TPM.enabled</code> field. You can set the <code class="literal">TPM.enabled</code> field to <code class="literal">false</code> to disable vTPM for migrations of VMware VMs with UEFI settings. If the field is set to <code class="literal">false</code>, it overrides the default vTPM preference in VMs post migration.
+					</p></li></ul></div></section><section class="section" id="mtv-upgrade-2-9-0_release-notes"><div class="titlepage"><div><div><h2 class="title">1.2. Upgrade notes MTV 2.9.0</h2></div></div></div><p>
+				To upgrade to Migration Toolkit for Virtualization 2.9.0, you need to follow the manual upgrade process.
+			</p><p>
+				The option to automatically upgrade to 2.9 from 2.8 is not yet available. However, automatic upgrades will be enabled in future releases.
+			</p></section><section class="section" id="new-features-and-enhancements-2-9_release-notes"><div class="titlepage"><div><div><h2 class="title">1.3. New features and enhancements</h2></div></div></div><p>
+				Migration Toolkit for Virtualization (MTV) 2.9 introduces the following features and enhancements:
+			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						In the MTV 2.9.0 user interface, you can set the <code class="literal">skipGuestConversion</code> field to <code class="literal">true</code> in the migration plan to raw copy the disk of a VMware guest virtual machines (VM) to Red Hat Virtualization during migration. If you raw copy the guest VM, it does not convert the guest VM, install <code class="literal">virtio</code> drivers, and preserve the IP address. You can use this feature to migrate VMs that fail during migration because of unsupported guest operating systems. <a class="link" href="https://issues.redhat.com/browse/MTV-2001">(MTV-2001)</a>
+					</li><li class="listitem">
+						MTV 2.9.0 is integrated with the storage offloading plugin to delegate the disk data copy process to the storage arrays. The disk data is copied by the storage array to a new persistent volume (PV) that is created on Red Hat OpenShift. This PV can be used by the virtual machine. Since the data copy function is not carried over an IP-based network, the storage offloading helps to copy multi-terabyte data from single disk VMs without clogging the network, resulting in faster migrations. <a class="link" href="https://issues.redhat.com/browse/MTV-2241">(MTV-2241)</a>
+					</li></ul></div><div class="admonition important"><div class="admonition_header">Important</div><div><p>
+					Storage Copy Offload is a Developer Preview feature only. Developer Preview features are not supported by Red Hat in any way and are not functionally complete or production-ready. Do not use Developer Preview features for production or business-critical workloads. Developer Preview features provide early access to upcoming product features in advance of their possible inclusion in a Red Hat product offering, enabling customers to test functionality and provide feedback during the development process. These features might not have any documentation, are subject to change or removal at any time, and testing is limited. Red Hat might provide ways to submit feedback on Developer Preview features without an associated SLA.
+				</p></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						MTV 2.9.0 supports migrating an Open Virtual Appliance (OVA) file with multiple disks by mapping the OVA disks to multiple Storage Classes. <a class="link" href="https://issues.redhat.com/browse/MTV-1340">(MTV-1340)</a>
+					</li><li class="listitem">
+						MTV 2.9.0 supports persistence of nested VMware VMs after migrations if nested VMs are configured at source. <a class="link" href="https://issues.redhat.com/browse/MTV-2495">(MTV-2495)</a>
+					</li><li class="listitem">
+						MTV 2.9.0 allows users to change the names of the target VMs in the migration plan before migration. <a class="link" href="https://issues.redhat.com/browse/MTV-2087">(MTV-2087)</a>
+					</li><li class="listitem">
+						MTV 2.9.0 supports the <code class="literal">shared</code> disk property field in the persistent volume claim (PVC) name template that allows you to customize the PVC name for shared disks. <a class="link" href="https://issues.redhat.com/browse/MTV-2337">(MTV-2337)</a>
+					</li><li class="listitem">
+						MTV 2.9.0 now preserves the original VM name from the plan custom resource (CR) in the migration CR. <a class="link" href="https://issues.redhat.com/browse/MTV-2075">(MTV-2075)</a>
+					</li><li class="listitem">
+						MTV 2.9.0 CLI allows you to add a <code class="literal">display-name</code> in the <code class="literal">annotations</code> field of the migration plan. The <code class="literal">display-name</code> you enter cannot be used for making API calls or CLI operations. <a class="link" href="https://issues.redhat.com/browse/MTV-2076">(MTV-2076)</a>
+					</li><li class="listitem"><p class="simpara">
+						MTV 2.9.0 user interface has the following improvements:
+					</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+								Access the <span class="strong strong"><strong>Create Provider</strong></span> page for supported providers from the <span class="strong strong"><strong>Overview</strong></span> page in the Migration Toolkit for Virtualization menu. <a class="link" href="https://issues.redhat.com/browse/MTV-2210">(MTV-2210)</a>
+							</li><li class="listitem">
+								Access the <span class="strong strong"><strong>Health</strong></span> and the <span class="strong strong"><strong>Settings</strong></span> tabs from the <span class="strong strong"><strong>Overview</strong></span> page. <a class="link" href="https://issues.redhat.com/browse/MTV-2210">(MTV-2210)</a>
+							</li><li class="listitem">
+								Use the upgraded plan wizard page, where the status of the plan aligns with the statuses of the VM migrations. <a class="link" href="https://issues.redhat.com/browse/MTV-2547">(MTV-2547)</a>
+							</li></ul></div></li></ul></div></section><section class="section" id="rn-resolved-issues_release-notes"><div class="titlepage"><div><div><h2 class="title">1.4. Resolved issues</h2></div></div></div><p>
+				Migration Toolkit for Virtualization (MTV) 2.9 has the following resolved issues:
+			</p><section class="section" id="resolved-issues-2-9-0_release-notes"><div class="titlepage"><div><div><h3 class="title">1.4.1. Resolved issues 2.9.0</h3></div></div></div><div class="formalpara"><p class="title"><strong>MTV enabled vTPM for source Windows Server 2022 virtual machines without vTPM device</strong></p><p>
+						VMware only: In earlier releases of MTV, after warm migration of Windows Server 2022 virtual machines (VMs) with UEFI settings, the virtual Trusted Platform Module (vTPM) device was added to the VMs even though the source VMs did not have the vTPM device. This issue has been resolved in MTV 2.9.0. <a class="link" href="https://issues.redhat.com/browse/MTV-2014">(MTV-2014)</a>
+					</p></div><div class="formalpara"><p class="title"><strong>MTV failed to start the virtual machine with a non-aligned disk size after migration</strong></p><p>
+						VMware only: In earlier releases of MTV, after migrating a VM with a disk size that did not align with the underlying storage, the VM failed to start. This issue has been resolved in MTV 2.9.0. <a class="link" href="https://issues.redhat.com/browse/MTV-2524">(MTV-2524)</a>
+					</p></div><div class="formalpara"><p class="title"><strong>MTV does not refer to an incorrect URL in the VDDK error message</strong></p><p>
+						When you created a VMware provider with an incorrect VDDK URL and then created a migration plan, the plan displayed a <code class="literal">VDDK init image invalid</code> error message without a reference to the incorrect URL. This issue has been resolved in MTV 2.9.0. <a class="link" href="https://issues.redhat.com/browse/MTV-1150">(MTV-1150)</a>
+					</p></div><div class="formalpara"><p class="title"><strong>MTV swapped the MAC addresses after migrating VMware virtual machines with multiple NICs</strong></p><p>
+						In earlier versions of MTV, if the order of network mapping was different between the source VM and the migration plan, the MAC addresses of the network interface cards (NICs) could be switched during warm and cold migrations of a VMware VM with multiple NICs. This issue has been resolved in MTV 2.9.0. <a class="link" href="https://issues.redhat.com/browse/MTV-2025">(MTV-2025)</a>
+					</p></div><div class="formalpara"><p class="title"><strong>MTV failed OVA migration from an unsupported source</strong></p><p>
+						In earlier releases of MTV, when you tried to import an Open Virtual Appliance (OVA) file from a non-VMware source, the import failed due to Megabytes unit not being supported for the resource. This issue has been resolved in 2.9.0 by adding a warning about OVA from an unsupported source. <a class="link" href="https://issues.redhat.com/browse/MTV-2314">(MTV-2314)</a>
+					</p></div><div class="formalpara"><p class="title"><strong>OpenShift Container Platform to OpenShift Container Platform migration of VMware VM failed</strong></p><p>
+						In earlier releases of MTV, after you successfully migrate a VMware virtual machine (VM) from Red Hat Virtualization to an OCP cluster and then migrate the VM to another OCP cluster using MTV, the VM failed to start with a <code class="literal">No bootable device</code> error. This issue has been resolved in MTV 2.9.0 <a class="link" href="https://issues.redhat.com/browse/MTV-1544">(MTV-1544)</a>
+					</p></div><div class="formalpara"><p class="title"><strong>MTV changed the disk name of a virtual machine after migration from an OpenShift cluster to another OpenShift cluster</strong></p><p>
+						After you migrate a VMware guest VM to an OpenShift 4.18 cluster and then migrate that VM to another local OpenShift 4.18 cluster by using MTV, the disk names were changed. This issue has been resolved in MTV 2.9.0. <a class="link" href="https://issues.redhat.com/browse/MTV-2367">(MTV-2367)</a>
+					</p></div><div class="formalpara"><p class="title"><strong>MTV does not fully preserve VMware virtual machine UUID after migration</strong></p><p>
+						In earlier releases of MTV, the Universally Unique Identifiers (UUID) of VMware VMs were not fully preserved after migration to OpenShift. This issue has been resolved through a warning in migration plans to inform you that VM UUIDs are truncated to 20 characters for <code class="literal">virtio</code> disks. <a class="link" href="https://issues.redhat.com/browse/MTV-1368">(MTV-1368)</a>
+					</p></div><div class="formalpara"><p class="title"><strong>MTV does not preserve the host name of guest virtual machines after migration</strong></p><p>
+						In earlier releases of MTV, after migrating a VMware guest VM running Red Hat Enterprise Linux (RHEL), the host name configured in the <code class="literal">/etc/hostname</code> setting was not preserved in the target VM. This issue has been resolved in MTV 2.9.0. <a class="link" href="https://issues.redhat.com/browse/MTV-2364">(MTV-2364)</a>
+					</p></div><div class="formalpara"><p class="title"><strong>Cold migration of VMware ESXi virtual machines with IP address fail</strong></p><p>
+						In earlier releases of MTV, cold migrations of ESXi VMs that were created with a host IP address by using the vSphere provider failed because <code class="literal">virt-v2v</code> used the VM’s host name instead of the IP address. This issue has been resolved in MTV 2.9.0. <a class="link" href="https://issues.redhat.com/browse/MTV-2153">(MTV-2153)</a>
+					</p></div></section></section><section class="section" id="known-issues-2-9_release-notes"><div class="titlepage"><div><div><h2 class="title">1.5. Known issues</h2></div></div></div><p>
+				Migration Toolkit for Virtualization (MTV) 2.9 has the following known issues:
+			</p><div class="formalpara"><p class="title"><strong>Persistent volume claim name template does not support the <code class="literal">shared</code> field</strong></p><p>
+					The persistent volume claim (PVC) name template in the MTV user interface does not support the <code class="literal">shared</code> field to name volumes shared by multiple virtual machines. <a class="link" href="https://issues.redhat.com/browse/MTV-2721">(MTV-2721)</a>
+				</p></div><div class="formalpara"><p class="title"><strong>VMware guest virtual machines running Red Hat Enterprise Linux v6.0 cannot boot in MTV</strong></p><p>
+					VMware guest VMs running Red Hat Enterprise Linux (RHEL) v6.0 cannot boot into the operating system (OS) because the <code class="literal">virtio</code> disk of RHEL 6.0 requires the <code class="literal">virtio-transitional</code> device. <a class="link" href="https://issues.redhat.com/browse/MTV-1895">(MTV-1895)</a>
+				</p></div><div class="formalpara"><p class="title"><strong>Migration plan of virtual machines with NVMe disks hangs in MTV</strong></p><p>
+					When you select virtual machines (VMs) that use non-volatile memory express (NVMe) disks for creating a migration plan, the plan does not display an error but the migration stalls after the <span class="strong strong"><strong>DiskAllocation</strong></span> phase because the migration of VMs with NVMe disks is not currently supported. <a class="link" href="https://issues.redhat.com/browse/MTV-2703">(MTV-2703)</a>
+				</p></div><div class="formalpara"><p class="title"><strong>Source storage is not mapped in the MTV user interface for OpenShift to OpenShift migration</strong></p><p>
+					When you select the storage mapping in the plan for a virtual machine for an OpenShift to OpenShift migration, and update the source storage on the <span class="strong strong"><strong>Storage Maps</strong></span> page, MTV displays a <code class="literal">SourceStorageNotValid</code> error. <a class="link" href="https://issues.redhat.com/browse/MTV-2784">(MTV-2784)</a>
+				</p></div><div class="formalpara"><p class="title"><strong>Migration of VMware virtual machine from OpenShift to OpenShift cluster stalls due to changed name</strong></p><p>
+					When you migrate a VMware virtual machine (VM) to an OpenShift cluster, the VM name is modified. When you try to migrate the VM again from the OpenShift cluster to another OpenShift cluster, the plan hangs with an <code class="literal">invalid value</code> error for the VM name. <a class="link" href="https://issues.redhat.com/browse/MTV-2810">(MTV-2810)</a>
+				</p></div><div class="formalpara"><p class="title"><strong>TPM device of a virtual machine uses a different persistent-state PVC after OpenShift to OpenShift migration</strong></p><p>
+					When you migrate a virtual machine (VM) with trusted platform module (TPM) from OpenShift to OpenShift, the VM uses a new persistent volume claim (PVC) that is created for the persistent-state TPM device after migration. <a class="link" href="https://issues.redhat.com/browse/MTV-2838">(MTV-2838)</a>
+				</p></div><div class="formalpara"><p class="title"><strong>OpenShift to OpenShift migration of virtual machines with pre-migration or post-migration hooks fail</strong></p><p>
+					Cold migration of virtual machines (VMs) from an OpenShift cluster to another OpenShift cluster fails if the migration plan contains a pre-migration or a post-migration hook. <a class="link" href="https://issues.redhat.com/browse/MTV-2894">(MTV-2894)</a>
+				</p></div><div class="formalpara"><p class="title"><strong>VDDK image upload failure prevents the creation of VMware provider in the MTV user interface</strong></p><p>
+					When you upload a VMware virtual disk development kit (VDDK) image to the service inventory in the MTV user interface (UI), the upload fails with a <code class="literal">Forbidden</code> error. This prevents you from creating a VDDK directly in the UI. You can create a VDDK for virtual disk transfers by following the instructions in <a class="link" href="https://docs.redhat.com/en/documentation/migration_toolkit_for_virtualization/2.8/html/installing_and_using_the_migration_toolkit_for_virtualization/prerequisites_mtv#creating-vddk-image_mtv">Creating a VDDK image</a>. <a class="link" href="https://issues.redhat.com/browse/MTV-2888">(MTV-2888)</a>
+				</p></div><p>
+				For a complete list of all known issues in this release, see the list of <a class="link" href="https://issues.redhat.com/issues/?filter=12472621">Known Issues</a> in Jira.
+			</p></section></section><section class="chapter" id="release-notes-addendum_release-notes"><div class="titlepage"><div><div><h1 class="title">Chapter 2. Release notes addendum</h1></div></div></div><section class="section" id="mtv-selected-packages-2-8_release-notes"><div class="titlepage"><div><div><h2 class="title">2.1. MTV selected packages</h2></div></div></div><p>
+				The following listed packages are from the <code class="literal">virt-v2v</code> guest conversion pod:
+			</p><div class="table" id="idm46324031387952"><p class="title"><strong>Table 2.1. Selected MTV packages</strong></p><div class="table-contents"><table class="gt-4-cols lt-7-rows"><colgroup><col style="width: 22%; " class="col_1"/><col style="width: 13%; " class="col_2"/><col style="width: 13%; " class="col_3"/><col style="width: 13%; " class="col_4"/><col style="width: 13%; " class="col_5"/><col style="width: 13%; " class="col_6"/><col style="width: 13%; " class="col_7"/></colgroup><tbody><tr><td align="left" valign="top">
+							<p>
+								Package summary
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								MTV 2.8.0
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								MTV 2.8.1
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								MTV 2.8.2
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								MTV 2.8.3
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								MTV 2.8.4
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								MTV 2.8.5
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								The skeleton package which defines a simple Red Hat Enterprise Linux system
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								basesystem-11-13.el9.noarch
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								basesystem-11-13.el9.noarch
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								basesystem-11-13.el9.noarch
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								basesystem-11-13.el9.noarch
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								basesystem-11-13.el9.noarch
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								basesystem-11-13.el9.noarch
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								Core kernel modules to match the core kernel
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-modules-core-5.14.0-503.23.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-modules-core-5.14.0-503.35.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-modules-core-5.14.0-503.38.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-modules-core-5.14.0-503.40.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-modules-core-5.14.0-503.40.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-modules-core-5.14.0-570.18.1.el9_6.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								The Linux kernel
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-core-5.14.0-503.23.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-core-5.14.0-503.35.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-core-5.14.0-503.38.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-core-5.14.0-503.40.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-core-5.14.0-503.40.1.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								kernel-core-5.14.0-570.18.1.el9_6.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								Access and modify virtual machine disk images
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libguestfs-1.50.2-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libguestfs-1.50.2-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libguestfs-1.50.2-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libguestfs-1.50.2-4.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libguestfs-1.50.2-4.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libguestfs-1.54.0-8.el9_6.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								Client side utilities of the libvirt library
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-client-10.5.0-7.4.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-client-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-client-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-client-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-client-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-client-10.10.0-7.3.el9_6.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								Libvirt libraries
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-libs-10.5.0-7.4.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-libs-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-libs-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-libs-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-libs-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-libs-10.10.0-7.3.el9_6.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								QEMU driver plugin for the libvirtd daemon
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-daemon-driver-qemu-10.5.0-7.4.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-daemon-driver-qemu-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-daemon-driver-qemu-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-daemon-driver-qemu-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-daemon-driver-qemu-10.5.0-7.5.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								libvirt-daemon-driver-qemu-10.10.0-7.3.el9_6.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								NBD server
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-1.38.5-2.el9.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								Basic filters for nbdkit
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-filters-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-filters-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-filters-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-filters-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-filters-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-filters-1.38.5-2.el9.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								Basic plugins for nbdkit
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-plugins-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-plugins-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-plugins-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-plugins-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-plugins-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-basic-plugins-1.38.5-2.el9.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								HTTP/FTP (cURL) plugin for nbdkit
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-curl-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-curl-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-curl-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-curl-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-curl-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-curl-plugin-1.38.5-2.el9.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								NBD proxy / forward plugin for nbdkit
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-nbd-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-nbd-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-nbd-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-nbd-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-nbd-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-nbd-plugin-1.38.5-2.el9.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								Python 3 plugin for nbdkit
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-python-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-python-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-python-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-python-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-python-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-python-plugin-1.38.5-2.el9.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								The nbdkit server
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-server-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-server-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-server-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-server-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-server-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-server-1.38.5-2.el9.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								SSH plugin for nbdkit
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-ssh-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-ssh-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-ssh-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-ssh-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-ssh-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-ssh-plugin-1.38.5-2.el9.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								VMware VDDK plugin for nbdkit
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-vddk-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-vddk-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-vddk-plugin-1.38.3-1.el9.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-vddk-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-vddk-plugin-1.38.3-2.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								nbdkit-vddk-plugin-1.38.5-2.el9.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								QEMU command line tool for manipulating disk images
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-img-9.0.0-10.el9_5.2.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-img-9.0.0-10.el9_5.2.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-img-9.0.0-10.el9_5.2.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-img-9.0.0-10.el9_5.3.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-img-9.0.0-10.el9_5.3.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-img-9.1.0-15.el9_6.4.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								QEMU common files needed by all QEMU targets
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-common-9.0.0-10.el9_5.2.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-common-9.0.0-10.el9_5.2.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-common-9.0.0-10.el9_5.2.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-common-9.0.0-10.el9_5.3.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-common-9.0.0-10.el9_5.3.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-common-9.1.0-15.el9_6.4.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								QEMU KVM core components
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-core-9.0.0-10.el9_5.2.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-core-9.0.0-10.el9_5.2.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-core-9.0.0-10.el9_5.2.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-core-9.0.0-10.el9_5.3.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-core-9.0.0-10.el9_5.3.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								qemu-kvm-core-9.1.0-15.el9_6.4.x86_64
+							</p>
+							</td></tr><tr><td align="left" valign="top">
+							<p>
+								Convert a virtual machine to run on KVM
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								virt-v2v-2.5.6-7.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								virt-v2v-2.5.6-9.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								virt-v2v-2.5.6-9.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								virt-v2v-2.5.6-10.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								virt-v2v-2.5.6-10.el9_5.x86_64
+							</p>
+							</td><td align="left" valign="top">
+							<p>
+								virt-v2v-2.7.1-8.el9_6.x86_64
+							</p>
+							</td></tr></tbody></table></div></div></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm46324007464448"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+		Copyright <span class="trademark"/>© 2025 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
 	</div><div class="para">
